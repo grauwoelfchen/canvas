@@ -7,3 +7,4 @@ site/cache
 site/*.db*
 
 site/output
+public

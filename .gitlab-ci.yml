@@ -1,0 +1,28 @@
+stages:
+  - pages
+
+variables:
+  PIP_CACHE_DIR: pip-cache
+
+cache:
+  untracked: true
+  paths:
+    - pip-cache
+
+pages:
+  stage: pages
+  image: python:3.5.4
+  before_script:
+    - python --version
+    - pip --version
+    - make setup
+    - make clean
+  script:
+    - make build
+    - make distribute
+  artifacts:
+    untracked: true
+    paths:
+      - public
+  only:
+    - master
