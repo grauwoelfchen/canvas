@@ -14,8 +14,9 @@ clean:
 	cd site && rm -fr ./output
 .PHONY: clean
 
+# put as `public` and delete unused files
 distribute:
-	if [ -d "site/public" ]; then mv site/output public; fi
+	if [ -d "site/output" ]; then mv site/output public; fi
 	rm -f public/assets/css/baguetteBox.{css,min.css} \
 	   public/assets/css/html4css1.css \
 	   public/assets/css/ipython.min.css \
