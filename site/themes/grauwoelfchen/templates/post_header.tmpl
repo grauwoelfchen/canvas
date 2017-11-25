@@ -1,0 +1,26 @@
+<%namespace name="helper" file="post_helper.tmpl"/>
+
+<%def name="html_title()">
+%if title and not post.meta('hidetitle'):
+    <h1 class="post-title p-name entry-title" itemprop="headline name"><a href="${post.permalink()}" class="u-url">${post.title()|h}</a></h1>
+%endif
+</%def>
+
+<%def name="html_sourcelink()">
+    % if show_sourcelink:
+        <p class="sourceline"><a href="${post.source_link()}" id="sourcelink">${messages("Source")}</a></p>
+    % endif
+</%def>
+
+<%def name="html_post_header()">
+    <header>
+        ${html_title()}
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">${post.author()}</span></p>
+            <p class="dateline"><a href="${post.permalink()}" rel="bookmark"><time class="post-date published dt-published" datetime="${post.date.isoformat()}" itemprop="datePublished" title="${post.formatted_date(date_format)}">${post.formatted_date(date_format)}</time></a></p>
+            %if post.description():
+                <meta name="description" itemprop="description" content="${post.description()}">
+            %endif
+        </div>
+    </header>
+</%def>

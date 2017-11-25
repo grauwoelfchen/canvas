@@ -1,0 +1,60 @@
+## vim: set ft=mako:
+<%namespace name="base" file="base_helper.tmpl" import="*"/>
+<%namespace name="header" file="base_header.tmpl" import="*"/>
+<%namespace name="footer" file="base_footer.tmpl" import="*"/>
+<%namespace name="annotations" file="annotation_helper.tmpl"/>
+${set_locale(lang)}
+${base.html_headstart()}
+<%block name="extra_head">
+  ## pass
+</%block>
+${template_hooks['extra_head']()}
+</head>
+% if lanyon_subtheme:
+<body class="${lanyon_subtheme}">
+%else:
+<body>
+%endif
+  <a href="#content" class="sr-only sr-only-focusable"></a>
+  <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-item">
+    <%
+      import urllib, hashlib
+      email = 'yasuhiro.asaka@grauwoelfchen.net'
+      size = 40
+      gravatar_url = "https://www.gravatar.com/avatar/{}?s={}".format(
+        hashlib.md5(email.encode()).hexdigest(),
+        size
+      )
+    %>
+    <img src=${gravatar_url}>
+    <p><a href="https://grauwoelfchen.net/">Yasuhiro Asaka</a> (grauwoelfchen)</p>
+    <p><a href="mailto:${email}">${email}</a></p>
+    <p>A Programmer. I'm hacking on Gentoo/Funtoo Linux.
+      I love greens and grow vegetables,
+      developing <a href="https://about.scrolliris.com/">Scrolliris</a>. </p>
+    <p>GNU social: <a href="https://gnusocial.de/grauwoelfchen">gnusocial.de/grauwoelfchen</a></a>
+    </div>
+    ${header.html_navigation_links()}
+  </div>
+
+  <div class="wrap">
+    <div class="masthead">
+      <div class="container">
+        ${header.html_site_title()}
+      </div>
+    </div>
+
+    <div class="container content" id="content">
+      <%block name="content"></%block>
+      ${footer.html_footer()}
+    </div>
+  </div>
+  <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+  ${body_end}
+  ${template_hooks['body_end']()}
+  ${base.late_load_js()}
+  <%block name="extra_js"></%block>
+</body>
+</html>
