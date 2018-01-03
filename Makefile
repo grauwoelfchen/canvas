@@ -1,5 +1,11 @@
+ifeq (,$(ENV))
+	env := development
+else
+	env := production
+endif
+
 setup:
-	pip install Nikola -c constraints.txt
+	pip install -e '.[${env}]' -c constraints.txt
 .PHONY: setup
 
 build:
@@ -7,7 +13,7 @@ build:
 .PHONY: build
 
 serve:
-	cd site && nikola serve
+	cd site && nikola auto --port=5000
 .PHONY: serve
 
 clean:
