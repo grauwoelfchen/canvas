@@ -116,7 +116,10 @@ I've installed kcov via ``apt-get`` (with cache configuration).
 
 
 Hmm, it seems that kcov on Debian is a little bit old (11.1?). And it does not have
-even `--version` option.
+even `--version` option. See links below (In 01.02.2018, 11.1 is still stable version.)
+
+* https://tracker.debian.org/pkg/kcov
+* https://packages.debian.org/source/stable/kcov
 
 So, finally, I wrote a build script using newest version (version 34) with
 cache support on CI.
