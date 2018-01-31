@@ -21,14 +21,11 @@
       <p class="dateline"><a href="${post.permalink()}" rel="bookmark"><time class="post-date published dt-published" datetime="${post.date.isoformat()}" title="${post.formatted_date(date_format)}">${post.formatted_date(date_format)}</time></a></p>
     </div>
   </header>
-  %if index_teasers:
-  <div class="p-summary entry-summary">
-  ${post.text(teaser_only=True)}
-  %else:
+  %if not index_teasers:
   <div class="e-content entry-content">
   ${post.text(teaser_only=False)}
-  %endif
   </div>
+  %endif
   </article>
 % endfor
 </div>
