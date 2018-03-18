@@ -68,6 +68,7 @@ h4, h5, h6 {
 }
 
 p {
+  line-height: 1.39rem;
   margin-top: 0;
   margin-bottom: 1rem;
 }
@@ -124,8 +125,9 @@ code {
 
 pre {
   display: block;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 1.88rem;
+  margin-bottom: 1.90rem;
+  border-radius: 0.168rem;
   padding: 0;
   font-size: .8rem;
   line-height: 1.4;
@@ -136,11 +138,23 @@ pre {
   background-color: #f9f9f9;
 }
 
-pre code {
-  padding: 0;
+pre.code {
+  padding: 0.49rem 0.633rem;
   font-size: 100%;
-  color: inherit;
-  background-color: transparent;
+  color: #f3f3f3;
+  background: #222222;
+}
+
+pre.code .nv {
+  color: #bcd2ee;
+}
+
+pre.code .s2 {
+  color: #955699;
+}
+
+pre.code .k {
+  color: #97ab97;
 }
 
 blockquote {
