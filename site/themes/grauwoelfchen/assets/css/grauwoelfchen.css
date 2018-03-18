@@ -538,3 +538,36 @@ ul.tags li {
   display: inline-block;
   margin-right: 0.66rem;
 }
+
+/* top */
+
+.posts .post {
+  margin-bottom: 1.24rem;
+}
+
+.posts .post-title {
+  font-size: 1.36em;
+}
+
+.posts .post-title a {
+  color: #666666;
+}
+
+.posts .post-title a:hover,
+.posts .metadata a:hover {
+  color: #888888;
+}
+
+
+/* archives, tags */
+
+.postlist {
+  margin-left: 0;
+  padding-left: 0.992rem;
+}
+
+.postlist li time {
+  display: inline-block;
+  margin-right: 0.66rem;
+  color: #888888;
+}
