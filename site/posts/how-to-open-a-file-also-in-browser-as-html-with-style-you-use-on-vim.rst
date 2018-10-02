@@ -192,7 +192,7 @@ You can do this (open often script itself!):
    % often -zO /path/to/often
 
 If you use browser in fullscreen mode, you may be confused.
-I often try to edit the HTML file, accidentaly ;)
+I often try to edit the HTML file, accidentally ;)
 
 .. image:: /attachments/often-often-20181002.png
    :alt: Result of `often /path/to/often`
