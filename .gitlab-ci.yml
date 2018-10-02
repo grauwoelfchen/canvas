@@ -21,7 +21,6 @@ pages:
     - make build
     - make distribute
   artifacts:
-    untracked: true
     paths:
       - public
   only:
