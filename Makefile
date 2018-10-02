@@ -22,6 +22,7 @@ clean:
 
 # put as `public` and delete unused files
 distribute:
+	rm -fr public/*
 	if [ -d "site/output" ]; then mv site/output public; fi
 	rm -f public/assets/css/baguetteBox.{css,min.css} \
 	   public/assets/css/html4css1.css \
