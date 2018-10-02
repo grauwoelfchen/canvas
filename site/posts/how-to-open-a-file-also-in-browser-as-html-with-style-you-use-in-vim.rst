@@ -1,5 +1,5 @@
-.. title: How to open a file also in browser as HTML with style you use on Vim
-.. slug: how-to-open-a-file-also-in-browser-as-html-with-style-you-use-on-vim
+.. title: How to open a file also in browser as HTML with style you use in Vim
+.. slug: how-to-open-a-file-also-in-browser-as-html-with-style-you-use-in-vim
 .. date: 2018-10-02 18:56:04 UTC
 .. tags: HTML, Vim
 .. category: Programming
