@@ -6,6 +6,7 @@ __pycache__
 
 site/cache
 site/*.db*
+site/posts/*.rst.draft
 
 site/output
 public
