@@ -1,0 +1,32 @@
+[website]
+title = "Grauwoelfchen's Canvas"
+description = """
+"""
+lang = "en" # HTML attribute. set language_code
+# url = "http://127.0.0.1:3000"
+url = "https://grauwoelfchen.at"
+include = [
+  "blog/post/*.rst"
+]
+license = "CC-BY-NC-SA-4.0"
+# authors = [
+#  "Yasuhiro Яша Asaka <yasuhiro.asaka@grauwoelfchen.net>",
+# ]
+
+[build]
+target-dir = "dst"
+
+[[website.metadata.authors]]
+name = "Yasuhiro Яша Asaka"
+nick = "grauwoelfchen"
+# TODO
+bio = """
+<p>A Programmer. I'm hacking on Gentoo/Funtoo Linux or OpenBSD. I love greens and grow vegetables, develop <a href="https://gitlab.com/scrolliris">Scrolliris</a> and <a href="https://gitlab.com/eloquentlog">Eloquentlog</a> at own firm Lupine Software LLC.</p>
+<p>Workroom:<br><a href="https://grauwoelfchen.net">https://grauwoelfchen.net</a></p>
+<p>Mastodon:<br><a href="https://fosstodon.org/@grauwoelfchen">@grauwoelfchen@fosstodon.org</a></p>
+
+<span style="font-size: 0.76em">
+Copyright (c) 2017-2020 Yasuhiro Яша Asaka All rights reserved.</span>
+"""
+email = "yasuhiro.asaka@grauwoelfchen.net"
+avatar = "https://www.gravatar.com/avatar/caf84d2962cbae495fe70b1b40872637?s=40"

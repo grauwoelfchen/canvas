@@ -1,18 +1,14 @@
-.. title: Use <img> tag with data:url as embedded image
-.. slug: use-img-tag-with-data-url-as-embedded-image
-.. date: 2018-01-03 20:04:00 UTC
-.. tags: HTML, Python
-.. category: Web Design and Frontend
-.. link:
-.. description:
-.. type: text
+.. title:: Use <img> tag with data:url as embedded image
+.. slug::
+.. date:: 2018-01-03 20:04:00 UTC
+.. description::
 
 ``<img>`` tag can treat base64 encoded text for `src` attribute.
 
 .. code:: html
 
-  # normal img tag
-  <img src="https://..." width="..." height="..." alt="...">
+   # normal img tag
+   <img src="https://..." width="..." height="..." alt="...">
 
 
 According **Embedding an image via data: URL** section in `Using images - Web APIs | MDN`_
@@ -27,7 +23,7 @@ That's like this:
 
 .. code:: html
 
-  <img src="data:image/png;base64,...">
+   <img src="data:image/png;base64,...">
 
 
 Pros. is very clear. It reduces a request to fetch that image (DNS lookup, request and downloading etc.). And it might be portable code.
@@ -52,18 +48,18 @@ That's very easy. For example, in Python.
 
 .. code:: python
 
-  import base64
+   import base64
 
-  text = ''
+   text = ''
 
-  with open('/path/to/png', 'rb') as f:
-    f.read()  # if you want to check
-    f.seek(0)  # and back to 0
+   with open('/path/to/png', 'rb') as f:
+     f.read()  # if you want to check
+     f.seek(0)  # and back to 0
 
-    # get encoded binary text
-    text = base64.b64encode(f.read())
+     # get encoded binary text
+     text = base64.b64encode(f.read())
 
-  print(text.decode())
+   print(text.decode())
 
 
 And just append it to ``data:image/png;base64,`` in ``src`` attribute of ``<img>`` tag.
@@ -75,7 +71,7 @@ Syntax is:
 
 .. code:: text
 
-  data:[<mediatype>][;base64],<data>
+   data:[<mediatype>][;base64],<data>
 
 According to RFC2397, It seems that some applications (browsers?) have length limit for this data URLs.
 
@@ -100,11 +96,12 @@ Example
 
 .. code:: html
 
-  <img src="/attachments/grauwoelfchen.jpg" width=25 height=25 alt="grauwoelfchen">
+   <img src="/attachments/grauwoelfchen.jpg" width=25 height=25 alt="grauwoelfchen">
 
-.. raw:: html
+..
+   .. raw:: html
 
-  <img src="/attachments/grauwoelfchen.jpg" width=25 height=25 alt="grauwoelfchen">
+      <img src="/attachments/grauwoelfchen.jpg" width=25 height=25 alt="grauwoelfchen">
 
 .. code:: python
 
@@ -122,11 +119,12 @@ This is a image using data:url
 
 .. code:: html
 
-  <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/7QBcUGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAACQcAVoAAxslRxwCAAACAAIcAkYAEFBpeGVsbWF0b3IgMS42LjI4QklNBCUAAAAAABAN4QFFUXvae5OgY6aERRHP/+EAqkV4aWYAAE1NACoAAAAIAAYBEgADAAAAAQABAAABGgAFAAAAAQAAAFYBGwAFAAAAAQAAAF4BKAADAAAAAQACAAABMQACAAAAEQAAAGaHaQAEAAAAAQAAAHgAAAAAAAAASAAAAAEAAABIAAAAAVBpeGVsbWF0b3IgMS42LjIAAAADoAEAAwAAAAH//wAAoAIABAAAAAEAAAAZoAMABAAAAAEAAAAZAAAAAP/bAEMAAgICAgIBAgICAgICAgMDBgQDAwMDBwUFBAYIBwgICAcICAkKDQsJCQwKCAgLDwsMDQ4ODg4JCxARDw4RDQ4ODv/bAEMBAgICAwMDBgQEBg4JCAkODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODv/AABEIABkAGQMBIgACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAAfAQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/AP27+IfxB0X4c+AZtc1iQnqsFuhw0rf0A7mvBovi98V9X+HS+JtD8GNczLeMtxorQDzYbbaWSYncWO8dABkjnFU/2gbeG/8A2ofg9p+tTwReGpNSh+0R3LhY5nMpwmDwWOBwOeDXmcXxV8RaN8V/iHZ6VbGwvdb8QHTdPkZgXcoWEflLjuCygdtteDOdXEV5x5+VR0032vc9qlSp0qMZcik5a67b2sfWnwr+K+kfEvQrsQwnT9csm2X9g5+aM5xkZ5xn16V67tHvXxR4B0i50P8A4KJX0Nrc287zaNCut+TIPmuhBukdlHq2Dk/1r7YrryzEzqU2pu7i2r97HJmFCFOonDRNJ27XPIfi18KtG+KXhLS4b6GJtV0i+TUNIuJdwENwn3WyOf5/Q18a+HPgv8dvBPj/AFvUtH0DSdR1jUdQe7OqXmoieGCV0VGkgRj+7HykhTnGT6kD9JB0f60w/fH+9/StK+Vwqz51JxfW3UzoZlOjHkcVJeZ4R8IPg3b+Adf8QeM9YMV1498RJB/bFwkryJmJNoClvx5AFe/VGfvj6VJXTQw1OhTUIo562InWqOUnqf/Z" width=25 height=25 alt="grauwoelfchen">
+   <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/7QBcUGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAACQcAVoAAxslRxwCAAACAAIcAkYAEFBpeGVsbWF0b3IgMS42LjI4QklNBCUAAAAAABAN4QFFUXvae5OgY6aERRHP/+EAqkV4aWYAAE1NACoAAAAIAAYBEgADAAAAAQABAAABGgAFAAAAAQAAAFYBGwAFAAAAAQAAAF4BKAADAAAAAQACAAABMQACAAAAEQAAAGaHaQAEAAAAAQAAAHgAAAAAAAAASAAAAAEAAABIAAAAAVBpeGVsbWF0b3IgMS42LjIAAAADoAEAAwAAAAH//wAAoAIABAAAAAEAAAAZoAMABAAAAAEAAAAZAAAAAP/bAEMAAgICAgIBAgICAgICAgMDBgQDAwMDBwUFBAYIBwgICAcICAkKDQsJCQwKCAgLDwsMDQ4ODg4JCxARDw4RDQ4ODv/bAEMBAgICAwMDBgQEBg4JCAkODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODv/AABEIABkAGQMBIgACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAAfAQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/AP27+IfxB0X4c+AZtc1iQnqsFuhw0rf0A7mvBovi98V9X+HS+JtD8GNczLeMtxorQDzYbbaWSYncWO8dABkjnFU/2gbeG/8A2ofg9p+tTwReGpNSh+0R3LhY5nMpwmDwWOBwOeDXmcXxV8RaN8V/iHZ6VbGwvdb8QHTdPkZgXcoWEflLjuCygdtteDOdXEV5x5+VR0032vc9qlSp0qMZcik5a67b2sfWnwr+K+kfEvQrsQwnT9csm2X9g5+aM5xkZ5xn16V67tHvXxR4B0i50P8A4KJX0Nrc287zaNCut+TIPmuhBukdlHq2Dk/1r7YrryzEzqU2pu7i2r97HJmFCFOonDRNJ27XPIfi18KtG+KXhLS4b6GJtV0i+TUNIuJdwENwn3WyOf5/Q18a+HPgv8dvBPj/AFvUtH0DSdR1jUdQe7OqXmoieGCV0VGkgRj+7HykhTnGT6kD9JB0f60w/fH+9/StK+Vwqz51JxfW3UzoZlOjHkcVJeZ4R8IPg3b+Adf8QeM9YMV1498RJB/bFwkryJmJNoClvx5AFe/VGfvj6VJXTQw1OhTUIo562InWqOUnqf/Z" width=25 height=25 alt="grauwoelfchen">
 
-.. raw:: html
+..
+   .. raw:: html
 
-  <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/7QBcUGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAACQcAVoAAxslRxwCAAACAAIcAkYAEFBpeGVsbWF0b3IgMS42LjI4QklNBCUAAAAAABAN4QFFUXvae5OgY6aERRHP/+EAqkV4aWYAAE1NACoAAAAIAAYBEgADAAAAAQABAAABGgAFAAAAAQAAAFYBGwAFAAAAAQAAAF4BKAADAAAAAQACAAABMQACAAAAEQAAAGaHaQAEAAAAAQAAAHgAAAAAAAAASAAAAAEAAABIAAAAAVBpeGVsbWF0b3IgMS42LjIAAAADoAEAAwAAAAH//wAAoAIABAAAAAEAAAAZoAMABAAAAAEAAAAZAAAAAP/bAEMAAgICAgIBAgICAgICAgMDBgQDAwMDBwUFBAYIBwgICAcICAkKDQsJCQwKCAgLDwsMDQ4ODg4JCxARDw4RDQ4ODv/bAEMBAgICAwMDBgQEBg4JCAkODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODv/AABEIABkAGQMBIgACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAAfAQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/AP27+IfxB0X4c+AZtc1iQnqsFuhw0rf0A7mvBovi98V9X+HS+JtD8GNczLeMtxorQDzYbbaWSYncWO8dABkjnFU/2gbeG/8A2ofg9p+tTwReGpNSh+0R3LhY5nMpwmDwWOBwOeDXmcXxV8RaN8V/iHZ6VbGwvdb8QHTdPkZgXcoWEflLjuCygdtteDOdXEV5x5+VR0032vc9qlSp0qMZcik5a67b2sfWnwr+K+kfEvQrsQwnT9csm2X9g5+aM5xkZ5xn16V67tHvXxR4B0i50P8A4KJX0Nrc287zaNCut+TIPmuhBukdlHq2Dk/1r7YrryzEzqU2pu7i2r97HJmFCFOonDRNJ27XPIfi18KtG+KXhLS4b6GJtV0i+TUNIuJdwENwn3WyOf5/Q18a+HPgv8dvBPj/AFvUtH0DSdR1jUdQe7OqXmoieGCV0VGkgRj+7HykhTnGT6kD9JB0f60w/fH+9/StK+Vwqz51JxfW3UzoZlOjHkcVJeZ4R8IPg3b+Adf8QeM9YMV1498RJB/bFwkryJmJNoClvx5AFe/VGfvj6VJXTQw1OhTUIo562InWqOUnqf/Z" width=25 height=25 alt="grauwoelfchen">
+       <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/7QBcUGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAACQcAVoAAxslRxwCAAACAAIcAkYAEFBpeGVsbWF0b3IgMS42LjI4QklNBCUAAAAAABAN4QFFUXvae5OgY6aERRHP/+EAqkV4aWYAAE1NACoAAAAIAAYBEgADAAAAAQABAAABGgAFAAAAAQAAAFYBGwAFAAAAAQAAAF4BKAADAAAAAQACAAABMQACAAAAEQAAAGaHaQAEAAAAAQAAAHgAAAAAAAAASAAAAAEAAABIAAAAAVBpeGVsbWF0b3IgMS42LjIAAAADoAEAAwAAAAH//wAAoAIABAAAAAEAAAAZoAMABAAAAAEAAAAZAAAAAP/bAEMAAgICAgIBAgICAgICAgMDBgQDAwMDBwUFBAYIBwgICAcICAkKDQsJCQwKCAgLDwsMDQ4ODg4JCxARDw4RDQ4ODv/bAEMBAgICAwMDBgQEBg4JCAkODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODv/AABEIABkAGQMBIgACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAAfAQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/AP27+IfxB0X4c+AZtc1iQnqsFuhw0rf0A7mvBovi98V9X+HS+JtD8GNczLeMtxorQDzYbbaWSYncWO8dABkjnFU/2gbeG/8A2ofg9p+tTwReGpNSh+0R3LhY5nMpwmDwWOBwOeDXmcXxV8RaN8V/iHZ6VbGwvdb8QHTdPkZgXcoWEflLjuCygdtteDOdXEV5x5+VR0032vc9qlSp0qMZcik5a67b2sfWnwr+K+kfEvQrsQwnT9csm2X9g5+aM5xkZ5xn16V67tHvXxR4B0i50P8A4KJX0Nrc287zaNCut+TIPmuhBukdlHq2Dk/1r7YrryzEzqU2pu7i2r97HJmFCFOonDRNJ27XPIfi18KtG+KXhLS4b6GJtV0i+TUNIuJdwENwn3WyOf5/Q18a+HPgv8dvBPj/AFvUtH0DSdR1jUdQe7OqXmoieGCV0VGkgRj+7HykhTnGT6kD9JB0f60w/fH+9/StK+Vwqz51JxfW3UzoZlOjHkcVJeZ4R8IPg3b+Adf8QeM9YMV1498RJB/bFwkryJmJNoClvx5AFe/VGfvj6VJXTQw1OhTUIo562InWqOUnqf/Z" width=25 height=25 alt="grauwoelfchen">
 
 | I think, the caching issue might be also an advantage for images which we don't want to be cached on browser.
 | Recently I used this way for a browser widget's icon to reduce a request to server.

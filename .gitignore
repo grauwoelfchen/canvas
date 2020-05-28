@@ -1,12 +1,2 @@
-venv
-
-.python-version
-__pycache__
-*.egg-info
-
-site/cache
-site/*.db*
-site/posts/*.rst.draft
-
-site/output
-public
+/public
+/dst

@@ -6,27 +6,25 @@ The website of https://grauwoelfchen.at/
 ## Setup
 
 ```zsh
-% python -V
-3.5.4
-% python -m venv venv
-% source ./venv/bin/activate
-(venv) % pip install --upgrade pip setuptools
-(venv) % pip install Nikola -c constraitns.txt
+% rustc --version
+rustc 1.43.1 (8d69840ab 2020-05-04)
+
+# install nib-cli and nib-server
+% make setup
 ```
 
 
 ## Serve
 
 ```zsh
-(venv) % cd site
-(venv) % nikola serve
+% make serve
 ```
 
 
 ## Build
 
 ```zsh
-% nikola build
+% make build
 ```
 
 
@@ -34,10 +32,10 @@ The website of https://grauwoelfchen.at/
 
 ```txt
 Grauwoelfchen's Canvas
-Copyright (c) 2017 Yasuhiro Asaka
+Copyright (c) 2017-2020 Yasuhiro Яша Asaka
 ```
 
-### Software (program)
+### Software
 
 `MIT`
 
@@ -45,7 +43,7 @@ This is free software:
 You can redistribute it and/or modify it under the terms of
 the [MIT](https://opensource.org/licenses/MIT) License.
 
-### Post and Image (contents)
+### Posts and Images
 
 `CC-BY-NC-SA-4.0`
 

@@ -1,21 +1,17 @@
-.. title: How to open a file also in browser as HTML with style you use in Vim
-.. slug: how-to-open-a-file-also-in-browser-as-html-with-style-you-use-in-vim
-.. date: 2018-10-02 18:56:04 UTC
-.. tags: HTML, Vim
-.. category: Programming
-.. link:
-.. description:
-.. type: text
+.. title:: How to open a file also in browser as HTML with style you use in Vim
+.. slug::
+.. date:: 2018-10-02 18:56:04 UTC
+.. description::
 
 TLDR: you can do it with some plugins like this. This opens the README.md in
 Vim (raw and HTML) and also in browser (HTML).
 
 .. code:: zsh
 
-  % vim README.md -c "%TOhtml|b2|call quickrun#run()|q"
+   % vim README.md -c "%TOhtml|b2|call quickrun#run()|q"
 
-  # with `zO` (foldings)
-  % vim README.md -c "%foldopen!|%TOhtml|b2|call quickrun#run()|q"
+   # with `zO` (foldings)
+   % vim README.md -c "%foldopen!|%TOhtml|b2|call quickrun#run()|q"
 
 
 You need:
@@ -26,9 +22,9 @@ You need:
 .. _tryu/open-browser.vim: https://github.com/tyru/open-browser.vim
 .. _thinca/quickrun: https://github.com/thinca/vim-quickrun
 
-
-.. image:: /attachments/how-to-open-a-file-also-in-browser-as-html-with-style-you-use-on-vim-20181002.png
+.. image:: /attachment/how-to-open-a-file-also-in-browser-as-html-with-style-you-use-on-vim-20181002.png
    :alt: Screenshot of this article's reStructuredText as HTML on browser
+
 
 Vim commands from command line
 ------------------------------
@@ -40,14 +36,18 @@ According help,
 * ``--cmd <command>`` execute <command> before loading any vimrc file
 * ``-c <command>`` execute <command> after loading the first file
 
-
 In this case, we need `-c <command>` because we want to handle the target file.
 
 
 Vim Commands
 ------------
 
-Let's look the parts of ``%TOhtml|b2|call quickrun#run()|q``, one by one.
+Let's look at the following parts, one by one.
+
+.. code:: vim
+
+   %TOhtml|b2|call quickrun#run()|q
+
 
 %foldopen!
 ----------
@@ -59,11 +59,10 @@ converted exactly look like.
 
 e.g. HTML of My .vimrc (without ``%foldopen!``)
 
-.. image:: /attachments/my-vimrc-with-foldings-as-html-20181002.png
+.. image:: /attachment/my-vimrc-with-foldings-as-html-20181002.png
    :alt: My .vimrc with foldings as HTML
 
 ``%`` means whole content, ``!`` means ``foldopen`` works recursively.
-
 
 %TOhtml
 ~~~~~~~
@@ -119,9 +118,9 @@ there.
 
 .. code:: text
 
-  :buffers
-  1 %a   "/path/to/file"         line 3
-  2 #h + "/path/to/file.html"    line 2
+   :buffers
+   1 %a   "/path/to/file"         line 3
+   2 #h + "/path/to/file.html"    line 2
 
 HTML will be appeared in your browser, but original file is also still opend
 in Vim ;)
@@ -137,6 +136,7 @@ Without ``%foldopen!`` (simple version):
 .. code:: sh
 
    #!/bin/sh
+
    vim "$1" -c "%TOhtml|b2|call quickrun#run()|q"
 
 
@@ -194,5 +194,5 @@ You can do this (open often script itself!):
 If you use browser in fullscreen mode, you may be confused.
 I often try to edit the HTML file, accidentally ;)
 
-.. image:: /attachments/often-often-20181002.png
+.. image:: /attachment/often-often-20181002.png
    :alt: Result of `often /path/to/often`

@@ -1,9 +1,0 @@
-## vim: set ft=mako:
-<%def name="html_footer()">
-  %if content_footer:
-    <footer id="footer">
-      <p class="copyright">${content_footer}</p>
-      ${template_hooks['page_footer']()}
-    </footer>
-  %endif
-</%def>

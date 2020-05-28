@@ -1,18 +1,14 @@
-.. title: Get test coverage for software written in Rust using Kcov
-.. slug: get-test-coverage-for-software-written-in-rust-using-kcov
-.. date: 2018-01-31 12:04:00 UTC
-.. tags: Rust
-.. category: Programming
-.. link:
-.. description:
-.. type: text
+.. title:: Get test coverage for software written in Rust using Kcov
+.. slug::
+.. date:: 2018-01-31 12:04:00 UTC
+.. description::
 
 To get test coverage for your Rust code, you can use `kcov`_.
 
 .. code:: zsh
 
-  % cargo test
-  % kcov --include-path ./src ./target/coverage target/debug/<name>-*
+   % cargo test
+   % kcov --include-path ./src ./target/coverage target/debug/<name>-*
 
 
 It generates pretty HTML and JSON report files that include also coverage score.  
@@ -20,9 +16,9 @@ And, this one liner can extract percentage value from ``index.json``, if you wan
 
 .. code:: zsh
 
-  % grep -oE 'covered":"([0-9]*\.[0-9]*|[0-9]*)"' target/coverage/index.json | \
-      grep -oE '[0-9]*\.[0-9]*|[0-9]*'
-  4.5
+   % grep -oE 'covered":"([0-9]*\.[0-9]*|[0-9]*)"' target/coverage/index.json | \
+       grep -oE '[0-9]*\.[0-9]*|[0-9]*'
+   4.5
 
 
 Ohh, ``4.5%`` .. !!!
@@ -31,14 +27,14 @@ So we can just like this:
 
 .. code:: zsh
 
-  : in .gitlab-ci.yml
-  % cat target/coverage/index.json
+   : in .gitlab-ci.yml
+   % cat target/coverage/index.json
 
 And then, use pattern something like this:
 
 .. code:: text
 
-  "covered":"(\d+(?:\.\d+)?)",
+   "covered":"(\d+(?:\.\d+)?)",
 
 
 This seems that it usually works well. But I faced still some problems on CI.
@@ -75,44 +71,44 @@ I've installed kcov via ``apt-get`` (with cache configuration).
 
 .. code:: yaml
 
-  test:
-    stage: test
-    image: rust:latest
-    ...
-    variables:
-      APT_CACHE_DIR: apt-cache
-    before_script:
-      # this lines install kcov
-      - mkdir -pv $APT_CACHE_DIR && apt-get -qq update
-      - apt-get -qq -o dir::cache::archives="$APT_CACHE_DIR" install -y kcov
-    ...
-    cache:
-      untracked: true
-      paths:
-        - apt-cache
-    ...
+   test:
+     stage: test
+     image: rust:latest
+     ...
+     variables:
+       APT_CACHE_DIR: apt-cache
+     before_script:
+       # this lines install kcov
+       - mkdir -pv $APT_CACHE_DIR && apt-get -qq update
+       - apt-get -qq -o dir::cache::archives="$APT_CACHE_DIR" install -y kcov
+     ...
+     cache:
+       untracked: true
+       paths:
+         - apt-cache
+     ...
 
 
 .. code:: yaml
 
-  test:
-    ...
-    after_script:
-      - kcov --include-path src target/coverage target/debug/<name>-*
-      - cat target/coverage/index.json
-    ...
+   test:
+     ...
+     after_script:
+       - kcov --include-path src target/coverage target/debug/<name>-*
+       - cat target/coverage/index.json
+     ...
 
 
-.. raw:: bash
+.. code:: bash
 
-  : output on GitLab CI
-  $ kcov --include-path src target/coverage target/debug/20min-*
+   : output on GitLab CI
+   $ kcov --include-path src target/coverage target/debug/20min-*
 
-  running 0 tests
+   running 0 tests
 
-  test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out
+   test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out
 
-  Error: Cannot open linux-vdso.so.1
+   Error: Cannot open linux-vdso.so.1
 
 
 Hmm, it seems that kcov on Debian is a little bit old (11.1?). And it does not have
@@ -132,69 +128,69 @@ This is a small bash script to build/install kcov into *kcov* directory on proje
 
 .. code:: bash
 
-  #!/bin/bash
-  set -eu
+   #!/bin/bash
+   set -eu
 
-  # NOTE:
-  # if set KCOV_DISCARD_CACHE=true, then it will force installing kcov)
+   # NOTE:
+   # if set KCOV_DISCARD_CACHE=true, then it will force installing kcov)
 
-  renew="${KCOV_DISCARD_CACHE:-false}"
+   renew="${KCOV_DISCARD_CACHE:-false}"
 
-  kcov_dir="kcov"
-  kcov_bin="${kcov_dir}/bin/kcov"
-  kcov_url="https://github.com/SimonKagstrom/kcov/archive"
-  kcov_ver="v34"
+   kcov_dir="kcov"
+   kcov_bin="${kcov_dir}/bin/kcov"
+   kcov_url="https://github.com/SimonKagstrom/kcov/archive"
+   kcov_ver="v34"
 
-  if [[ -f "${kcov_bin}" && "${renew}" != "true" ]]; then
-    echo "kcov already installed in ${kcov_bin}"
-  else
-    rm -fr $kcov_dir
-    mkdir $kcov_dir
-    cd $kcov_dir
-    curl -sLO ${kcov_url}/${kcov_ver}.tar.gz
-    mkdir $kcov_ver
-    tar zxvf ${kcov_ver}.tar.gz -C $kcov_ver --strip-components=1
-    cd $kcov_ver
-    mkdir build
-    cmake \
-      -DCMAKE_BUILD_TYPE=Release \
-      -DCMAKE_INSTALL_PREFIX=/
-    make
-    make install DESTDIR=../
-  fi
+   if [[ -f "${kcov_bin}" && "${renew}" != "true" ]]; then
+     echo "kcov already installed in ${kcov_bin}"
+   else
+     rm -fr $kcov_dir
+     mkdir $kcov_dir
+     cd $kcov_dir
+     curl -sLO ${kcov_url}/${kcov_ver}.tar.gz
+     mkdir $kcov_ver
+     tar zxvf ${kcov_ver}.tar.gz -C $kcov_ver --strip-components=1
+     cd $kcov_ver
+     mkdir build
+     cmake \
+       -DCMAKE_BUILD_TYPE=Release \
+       -DCMAKE_INSTALL_PREFIX=/
+     make
+     make install DESTDIR=../
+   fi
 
 And ``.gitlab-ci.yml`` will be something like this (
 In addition to dependencies listed in INSTALL.md of kcov, you need also ``cmake``):
 
 .. code:: yaml
 
-  test:
-    stage: test
-    image: rust:latest
-    variables:
-      KCOV_DISCARD_CACHE: "false"
-      APT_CACHE_DIR: apt-cache
-    before_script:
-      - mkdir -pv $APT_CACHE_DIR && apt-get -qq update
-      - apt-get -qq -o dir::cache::archives="$APT_CACHE_DIR" install -y
-        binutils-dev libcurl4-openssl-dev zlib1g-dev libdw-dev libiberty-dev
-        cmake
-      - ./bin/build-kcov
-      - rustc --version
-      - cargo --version
-      - ./kcov/bin/kcov --version
-    script:
-      - cargo test
-    after_script:
-      - ./kcov/bin/kcov --include-path src target/coverage target/debug/20min-*
-      - cat target/coverage/index.json
-    cache:
-      untracked: true
-      paths:
-        - apt-cache
-        - kcov
-    except:
-      - tags
+   test:
+     stage: test
+     image: rust:latest
+     variables:
+       KCOV_DISCARD_CACHE: "false"
+       APT_CACHE_DIR: apt-cache
+     before_script:
+       - mkdir -pv $APT_CACHE_DIR && apt-get -qq update
+       - apt-get -qq -o dir::cache::archives="$APT_CACHE_DIR" install -y
+         binutils-dev libcurl4-openssl-dev zlib1g-dev libdw-dev libiberty-dev
+         cmake
+       - ./bin/build-kcov
+       - rustc --version
+       - cargo --version
+       - ./kcov/bin/kcov --version
+     script:
+       - cargo test
+     after_script:
+       - ./kcov/bin/kcov --include-path src target/coverage target/debug/20min-*
+       - cat target/coverage/index.json
+     cache:
+       untracked: true
+       paths:
+         - apt-cache
+         - kcov
+     except:
+       - tags
 
 Set ``KCOV_DISCARD_CACHE`` as ``true``, if you need to force re:install kcov.
 The kcov directory will be normally cached on GitLab CI!

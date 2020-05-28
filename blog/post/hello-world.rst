@@ -1,11 +1,7 @@
-.. title: Hello, world
-.. slug: hello-world
-.. date: 2017-11-25 13:08:13 UTC
-.. tags: None
-.. category:
-.. link:
-.. description:
-.. type: text
+.. title:: Hello, world
+.. slug::
+.. date:: 2017-11-25 13:08:13 UTC
+.. description::
 
 `Grauwoelfchen's Canvas` is back ;)
 
