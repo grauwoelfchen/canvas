@@ -199,8 +199,8 @@ I made also `make cov`_ target to check it on local, and a `ci-runner`_ script r
 
 Check it out on my small project repo `grauwoelfchen/20min`_ ;)
 
-.. _`make cov`: https://gitlab.com/grauwoelfchen/20min/blob/master/Makefile
-.. _`ci-runner`: https://gitlab.com/grauwoelfchen/20min/blob/master/bin/ci-runner
+.. _`make cov`: https://gitlab.com/grauwoelfchen/20min/blob/trunk/Makefile
+.. _`ci-runner`: https://gitlab.com/grauwoelfchen/20min/blob/trunk/bin/ci-runner
 .. _`grauwoelfchen/20min`: https://gitlab.com/grauwoelfchen/20min
 
 
