@@ -21,12 +21,12 @@ name = "Yasuhiro Яша Asaka"
 nick = "grauwoelfchen"
 # TODO
 bio = """
-<p>A Programmer. I'm hacking on Gentoo/Funtoo Linux or OpenBSD. I love greens and grow vegetables, develop <a href="https://gitlab.com/scrolliris">Scrolliris</a> and <a href="https://gitlab.com/eloquentlog">Eloquentlog</a> at own firm Lupine Software LLC.</p>
+<p>Yasha. A Programmer. I'm hacking on Gentoo/Funtoo Linux or OpenBSD. I love greens and grow vegetables, develop <a href="https://gitlab.com/scrolliris">Scrolliris</a> and <a href="https://gitlab.com/eloquentlog">Eloquentlog</a> at own firm Lupine Software LLC.</p>
 <p>Workroom:<br><a href="https://grauwoelfchen.net">https://grauwoelfchen.net</a></p>
 <p>Mastodon:<br><a href="https://fosstodon.org/@grauwoelfchen">@grauwoelfchen@fosstodon.org</a></p>
 
 <span style="font-size: 0.76em">
-Copyright (c) 2017-2020 Yasuhiro Яша Asaka All rights reserved.</span>
+Copyright (c) 2017-2021 Yasuhiro Яша Asaka All rights reserved.</span>
 """
 email = "yasuhiro.asaka@grauwoelfchen.net"
 avatar = "https://www.gravatar.com/avatar/caf84d2962cbae495fe70b1b40872637?s=40"
