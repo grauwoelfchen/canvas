@@ -14,6 +14,9 @@ rustc 1.54.0 (a178d0322 2021-07-26)
 % make setup
 ```
 
+See [nib-cli](https://crates.io/crates/nib-cli) and [nib-cli](
+https://crates.io/crates/nib-cli) for details.
+
 
 ## Serve
 
