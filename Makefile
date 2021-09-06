@@ -1,6 +1,6 @@
 setup:
-	@cargo install nib-cli --version 0.0.2
-	@cargo install nib-server --version 0.0.1
+	@cargo install nib-cli --version 0.0.3
+	@cargo install nib-server --version 0.0.2
 .PHONY: setup
 
 build:
