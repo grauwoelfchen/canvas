@@ -36,7 +36,7 @@ https://crates.io/crates/nib-cli) for details.
 
 ```txt
 Grauwoelfchen's Canvas
-Copyright (c) 2017-2021 Yasuhiro Яша Asaka
+Copyright (c) 2017-2023 Yasuhiro Яша Asaka
 ```
 
 ### Software
