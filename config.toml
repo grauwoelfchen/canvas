@@ -4,7 +4,7 @@ description = """
 """
 lang = "en" # HTML attribute. set language_code
 # url = "http://127.0.0.1:3000"
-url = "https://grauwoelfchen.at"
+url = "https://forge.grauwoelfchen.net"
 include = [
   "blog/post/*.rst"
 ]
