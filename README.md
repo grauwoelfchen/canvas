@@ -1,6 +1,7 @@
 # Grauwoelfchen's Canvas
 
-The website of https://grauwoelfchen.at/
+~~https://grauwoelfchen.at/~~  
+https://forge.grauwoelfchen.net/
 
 
 ## Setup
@@ -36,7 +37,7 @@ https://crates.io/crates/nib-cli) for details.
 
 ```txt
 Grauwoelfchen's Canvas
-Copyright (c) 2017-2023 Yasuhiro Яша Asaka
+Copyright (c) 2017-2024 Yasha
 ```
 
 ### Software
