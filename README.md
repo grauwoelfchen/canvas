@@ -11,7 +11,7 @@ https://forge.grauwoelfchen.net/
 ```zsh
 # use stable
 % rustc --version
-rustc 1.54.0 (a178d0322 2021-07-26)
+rustc 1.84.0 (9fc6b4312 2025-01-07)
 
 # install nib-cli and nib-server
 % make setup
