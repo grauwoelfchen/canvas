@@ -1,5 +1,5 @@
 [website]
-title = "Grauwoelfchen's Canvas"
+title = "Grauwoelfchen's Forge"
 description = """
 """
 lang = "en" # HTML attribute. set language_code
@@ -31,7 +31,7 @@ I love greenery and grow vegetables.<br/>
 <p>Mastodon:<br/><a href="https://fosstodon.org/@grauwoelfchen">@grauwoelfchen@fosstodon.org</a></p>
 <p>Pixelfed:<br/><a href="https://pixelfed.social/grauwoelfchen">@grauwoelfchen@pixelfed.social</a></p>
 <br />
-<span style="font-size: 0.76em">Copyright (C) 2017-2024 Yasha</span>
+<span style="font-size: 0.76em">Copyright (C) 2017-2025 Yasha</span>
 """
 email = ""
 avatar = "https://www.gravatar.com/avatar/caf84d2962cbae495fe70b1b40872637?s=40"

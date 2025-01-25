@@ -1,4 +1,8 @@
 Sun 26 Jan 2025 Yasha <yasuhiro.asaka@grauwoelfchen.net>
+	Update project name to "Grauwoelfchen's Forge"
+
+	* README.md, CHANGELOG and config.toml
+
 	Remove unesed .gitlab-ci.yaml (it's now hosted on home server)
 
 Tue 07 Sep 2021 Yasha <yasuhiro.asaka@grauwoelfchen.net>

@@ -1,7 +1,9 @@
-# Grauwoelfchen's Canvas
+# Grauwoelfchen's Forge
 
 ~~https://grauwoelfchen.at/~~  
 https://forge.grauwoelfchen.net/
+
+> I used to call this project "Canvas" :-D
 
 
 ## Setup
@@ -36,8 +38,8 @@ https://crates.io/crates/nib-cli) for details.
 ## License
 
 ```txt
-Grauwoelfchen's Canvas
-Copyright (c) 2017-2024 Yasha
+Grauwoelfchen's Forge
+Copyright (c) 2017-2025 Yasha
 ```
 
 ### Software
