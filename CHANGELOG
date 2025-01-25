@@ -3,8 +3,6 @@ Sun 26 Jan 2025 Yasha <yasuhiro.asaka@grauwoelfchen.net>
 
 	* README.md, CHANGELOG and config.toml
 
-	Remove unesed .gitlab-ci.yaml (it's now hosted on home server)
-
 Tue 07 Sep 2021 Yasha <yasuhiro.asaka@grauwoelfchen.net>
 	* Update nib tools (nib-cli and nib-server)
 	* Fix broken links
