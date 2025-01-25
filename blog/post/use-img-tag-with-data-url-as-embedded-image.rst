@@ -1,4 +1,4 @@
-.. title:: Use <img> tag with data:url as embedded image
+.. title:: Use img tag with data:url as embedded image
 .. slug::
 .. date:: 2018-01-03 20:04:00 UTC
 .. description::
