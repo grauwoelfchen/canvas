@@ -17,7 +17,7 @@ rustc 1.84.0 (9fc6b4312 2025-01-07)
 % make setup
 ```
 
-See [nib-cli](https://crates.io/crates/nib-cli) and [nib-cli](
+See [nib](https://crates.io/crates/nib) and [nib-cli](
 https://crates.io/crates/nib-cli) for details.
 
 
