@@ -1,9 +1,8 @@
-# TODO: install packages from crates.io
-# @cargo install nib-cli --version 0.0.3
-# @cargo install nib-server --version 0.0.2
+# cargo install --git https://gitlab.com/grauwoelfchen/nib.git nib-cli
+# cargo install --git https://gitlab.com/grauwoelfchen/nib.git nib-server
 setup:
-	cargo install --git https://gitlab.com/grauwoelfchen/nib.git nib-cli
-	cargo install --git https://gitlab.com/grauwoelfchen/nib.git nib-server
+	@cargo install nib-cli --version 0.0.4
+	@cargo install nib-server --version 0.0.2
 .PHONY: setup
 
 build:
