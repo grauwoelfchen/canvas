@@ -1,3 +1,10 @@
+> [!NOTE]
+>
+> This repository has been moved. Please check the new locations below.
+>
+> * [~grauwoelfchen/canvas](https://git.sr.ht/~grauwoelfchen/canvas) on Sourcehut
+> * [grauwoelfchen/canvas](https://codeberg.org/grauwoelfchen/canvas) on Codeberg
+
 # Grauwoelfchen's Canvas
 
 ~~https://grauwoelfchen.at/~~  
